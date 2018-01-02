@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>常用标签之超链接标签</title>
+</head>
+<body>
+	<h1 id="top">常用标签之超链接标签</h1>
+	<h2>主要内容：</h2>
+	<h3>1.书写格式</h3>
+	<h3>2.作用</h3>
+	<h3>3.重要属性的含义及可写参数</h3>
+	<h3>4.示例</h3>
+	<br><br><br><br><br><br>
+
+	<h2>1.书写格式：</h2>
+	<p>&lta href="../Test.html" title="just a test" target="_blank"&gt 超链接 &lt/a&gt</p>
+	<h2>2.作用</h2>
+		1)文本链接：实现不同页面之间的跳转<br>
+		2)锚点：试下一个页面中的偏移<br>
+		实现方法：首先定义一个锚点（其实就是给一个标签设置一个id属性）；接着超链接到这个锚点<br>
+		3)空链：开发阶段不知道链接到哪儿时，如此处理
+		实现方法：&lta href="#"&gt空链&lt/a&gt <br>
+		4)压缩文件下载：（不推荐使用）
+		实现方法：&lta href="../../test.rar"&gt压缩文件下载&lt/a&gt <br>
+		5)超链接优化写法（设置超链接默认打开方式）如：让让所有所有超链接能在新窗口打开
+		实现方法：&ltbase target="_blank"&gt
+	<h2>3.重要属性的含义及可写参数</h2>
+	<p>
+		1.href：<br>
+		1)含义：必写！Hypertext Reference 简写 href,作用：指定超链接目标的URL 目录<br>
+		2.title<br>
+		1)含义：提示文本：鼠标放到链接上显示的文字 <br>
+		3.target<br>
+		1)含义：控制页面打开的方法<br>
+		2)可写参数：_self(默认值，在自身页面打开，关闭自身，打开链接页面) <br>
+					_blank(自身页面不关闭，打开新窗口)
+					
+	</p>
+	<h2>实例</h2>
+	1.文本链接：实现不同页面之间的跳转<br>
+	<a href="../Test.html" title="just a test" target="_self">超链接</a><br>
+
+	2.锚点：试下一个页面中的偏移<br>
+	<a href="#top">回到顶部</a>
+	
+</body>
+</html>

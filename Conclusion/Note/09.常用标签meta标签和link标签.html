@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Language" content="text/html;charset=UTF-8">
+	<title>常用标签meta标签和link标签</title>
+	<link rel="stylesheet" href="../Test.css">
+	<link rel="shortcut icon" href="../favicon.ico">
+</head>
+<body>
+	<h1>常用标签meta标签和link标签</h1>	
+	<h2>主要内容：</h2>
+	<h3>1.charset 编码格式</h3>
+	<h3>2.mata标签</h3>
+	<h3>3.link 标签</h3>
+	<h3>4.零零碎碎</h3>
+	<br><br><br>
+	<h2>1.charset 编码格式</h2>
+	<p>1)含义：charset 属性规定在外部脚本文件中使用的字符编码。</p>
+	<p>2)常见的编码格式：<br>
+		1.ASCII码: <br>
+		这是美国在19世纪60年代的时候为了建立英文字符和二进制的关系时制定的编码规范，它能表示128个字符，其中包括英文字符、阿拉伯数字、西文字符以及32个控制字符。它用一个字节来表示具体的字符，但它只用后7位来表示字符（2^7=128），最前面的一位统一规定为0。<br>
+		2.扩展的ASCII码<br>
+		原本的ASCII码对于英文语言的国家是够用了，但是欧洲国家的一些语言会有拼音，这时7个字节就不够用了。因此一些欧洲国家就决定，利用字节中闲置的最高位编入新的符号。比如，法语中的é的编码为130（二进制10000010）。这样一来，这些欧洲国家使 用的编码体系，可以表示最多256个符号。但这时问题也出现了：不同的国家有不同的字母，因此，哪怕它们都使用256个符号的编码方式，代表的字母却不一样。比如，130在法语编码 中代表了é，在希伯来语编码中却代表了字母Gimel (ג)，在俄语编码中又会代表另一个符号。但是不管怎样，所有这些编码方式中，0—127表示的符号是一样的，不一样的只是128—255的这一段。这个问题就直接促使了Unicode编码的产生。<br>
+		3.Unicode符号集<br>
+		正如上一节所说，世界上存在着多种编码方式，同一个二进制数字可以被解释成不同的符号。因此，要想打开一个文本文件，就必须知道它的编码方式，否则用错误的编码方式解读，就会出现乱码。为什么电子邮件常常出现乱码？就是因为发信人和收信人使用的编码方式不一样。而Unicode就是这样一种编码：它包含了世界上所有的符号，并且每一个符号都是独一无二的。比如，U+0639表示阿拉伯字母Ain，U+0041表示英语的大写字母A，U+4E25表示汉字“严”。具体的符号对应表，可以查询unicode.org，或者专门的汉字对应表 。很多人都说Unicode编码，但其实Unicode是一个符号集（世界上所有符号的符号集），而不是一种新的编码方式。<br>
+		但是正因为Unicode包含了所有的字符，而有些国家的字符用一个字节便可以表示，而有些国家的字符要用多个字节才能表示出来。即产生了两个问题：第一，如果有两个字节的数据，那计算机怎么知道这两个字节是表示一个汉字呢？还是表示两个英文字母呢？第二，因为不同字符需要的存储长度不一样，那么如果Unicode规定用2个字节存储字符，那么英文字符存储时前面1个字节都是0，这就大大浪费了存储空间。
+		上面两个问题造成的结果是：1）出现了unicode的多种存储方式，也就是说有许多种不同的二进制格式，可以用来表示unicode。2）unicode在很长一段时间内无法推广，直到互联网的出现。<br>
+		4.UTF-8
+		互联网的普及，强烈要求出现一种统一的编码方式。UTF-8就是在互联网上使用最广的一种unicode的实现方式。其他实现方式还包括UTF-16和UTF-32，不过在互联网上基本不用。重复一遍，这里的关系是，UTF-8是Unicode的实现方式之一。<br>
+		UTF-8最大的一个特点，就是它是一种变长的编码方式。它可以使用1~4个字节表示一个符号，根据不同的符号而变化字节长度。<br>
+
+		UTF-8的编码规则很简单，只有两条：<br>
+
+		1）对于单字节的符号，字节的第一位设为0，后面7位为这个符号的unicode码。因此对于英语字母，UTF-8编码和ASCII码是相同的。<br>
+
+		2）对于n字节的符号（n>1），第一个字节的前n位都设为1，第n+1位设为0，后面字节的前两位一律设为10。剩下的没有提及的二进制位，全部为这个符号的unicode码。<br>
+		5.GBK/GB2312/GB18030 <br>
+		GBK和GB2312都是针对简体字的编码，只是GB2312只支持六千多个汉字的编码，而GBK支持1万多个汉字编码。而GB18030是用于繁体字的编码。汉字存储时都使用两个字节来储存。<br>
+		6.总结
+		ASCII编码：用来表示英文，它使用1个字节表示，其中第一位规定为0，其他7位存储数据，一共可以表示128个字符。<br>
+		拓展ASCII编码：用于表示更多的欧洲文字，用8个位存储数据，一共可以表示256个字符<br>
+		GBK/GB2312/GB18030：表示汉字。GBK/GB2312表示简体中文，GB18030表示繁体中文。<br>
+		Unicode编码：包含世界上所有的字符，是一个字符集。<br>
+		UTF-8：是Unicode字符的实现方式之一，它使用1-4个字符表示一个符号，根据不同的符号而变化字节长度。<br>
+	</p>
+	<h2>2.meta标签</h2>
+	<p>
+		1)含义：meta英译：目标；meta标签可提供有关页面的元信息（meta-information）；meta是html语言head区的一个辅助性标签<br>
+		2)书写位置：标签位于文档的头部，不包含任何内容，也是一个空元素<br>
+		3)作用：<br>
+		搜索引擎优化（SEO）<br>
+		.定义页面使用语言<br>
+		.自动刷新并指向新的页面<br>
+		.实现网页转换时的动态效果<br>
+		.控制页面缓冲<br>
+		.网页定级评价<br>
+		.控制网页显示的窗口等<br>
+		4)重要属性和值：<br>
+		 <b> 1.name属性</b> <br>
+		主要用于描述网页，与之对应的属性值为content，content中的内容主要是便于搜索引擎机器人查找信息和分类信息用的。<br>
+		<b>A.Keywords(关键字)</b> <br>
+		说明：keywords用来告诉搜索引擎你网页的关键字是什么。<br>
+		举例:<br>
+		&ltmeta name="keywords"content="meta总结,html meta,meta属性,meta跳转">&gt <br>
+
+		<b>B.description(网站内容描述)</b> <br>
+		说明：description用来告诉搜索引擎你的网站主要内容。<br>
+		举例:<br>
+		&ltmeta name="description"content="haorooms博客,html的meta总结，meta是html语言head区的一个辅助性标签。">&gt <br>
+
+		<b>C.robots(机器人向导)</b> <br>
+		说明：robots用来告诉搜索机器人哪些页面需要索引，哪些页面不需要索引。<br>
+		content的参数有all,none,index,noindex,follow,nofollow。默认是all <br>
+		&nbsp&nbsp信息参数为all：文件将被检索，且页面上的链接可以被查询；<br>
+
+		&nbsp&nbsp信息参数为none：文件将不被检索，且页面上的链接不可以被查询；<br>
+
+		&nbsp&nbsp信息参数为index：文件将被检索；<br>
+
+		&nbsp&nbsp信息参数为follow：页面上的链接可以被查询；<br>
+
+		&nbsp&nbsp信息参数为noindex：文件将不被检索，但页面上的链接可以被查询；<br>
+
+		&nbsp&nbsp信息参数为nofollow：文件将被检索，但页面上的链接不可以被查询；<br>
+
+		举例:<br>
+		&ltmeta name="robots"content="none"&gt <br>
+
+		<b>D.author(作者)</b> <br>
+		说明：标注网页的作者<br>
+		举例:<br>
+		&lmeta name="author"content="root,root@xxxx.com"&gt <br>
+
+		<b>E.generator(制作工具)</b> <br>
+		说明：meta标签的generator的信息参数，代表说明网站的采用的什么软件制作。<br>
+		举例:<br>
+		&ltmeta name="generator"content="信息参数"/&gt <br>
+
+		<b>F.COPYRIGHT(版权信息)</b> <br>
+		说明：meta标签的COPYRIGHT的信息参数，代表说明网站版权信息。<br>
+		举例:<br>
+		&ltMETA NAME="COPYRIGHT"CONTENT="信息参数"&gt <br>
+		
+		<b>G.revisit-after(网站重访)</b> <br>
+		说明：revisit-after代表网站重访,7days代表7天，依此类推。<br>
+		举例:<br>
+		&ltMETA name="revisit-after"CONTENT="7days"&gt <br>
+		<br><br><br><br>
+		 <b>2.http-equiv 属性</b> <br>
+		顾名思义，相当于http的文件头作用，它可以向浏览器传回一些有用的信息，以帮助正确和精确地显示网页内容，与之对应的属性值为content，content中的内容其实就是各个参数的变量值。<br>
+		<b>A.Expires(期限)</b> <br>
+		说明：可以用于设定网页的到期时间。一旦网页过期，必须到服务器上重新传输。<br>
+		注意：必须使用GMT的时间格式<br>
+		举例:<br>
+		&ltmeta http-equiv="expires"content="Fri,12Jan200118:18:18GMT"&gt <br>
+
+		<b>B.Pragma(cache模式)</b> <br>
+		说明:禁止浏览器从本地计算机的缓存中访问页面内容<br>
+		注意：这样设定，访问者将无法脱机浏览 <br>
+		举例:<br>
+		&ltmeta http-equiv="Pragma"content="no-cache">&gt <br>
+		
+		<b>C.Refresh(刷新)</b> <br>
+		说明：自动刷新并指向新页面。<br>
+		注意：其中的2是指停留2秒钟后自动刷新到URL网址。<br>
+		举例:<br>
+		&ltmeta http-equiv="Refresh"content="2;URL=http://www.haorooms.com"&gt <br>
+
+		<b>D.Set-Cookie(cookie设定)</b> <br>
+		说明：如果网页过期，那么存盘的cookie将被删除<br>
+		注意：必须使用GMT的时间格式。<br>
+		举例:<br>
+		&ltmeta http-equiv="Set-Cookie"content="cookie value=xxx;expires=Friday,12-Jan-200118:18:18GMT；path=/"&gt <br>
+
+		<b>E.Window-target(显示窗口的设定)</b> <br>
+		说明：强制页面在当前窗口以独立页面显示。<br>
+		注意：用来防止别人在框架里调用自己的页面。<br>
+		举例:<br>
+		&ltmeta http-equiv="Window-target"content="_top"/&gt <br>
+
+		<b>F.content-Type(显示字符集的设定)</b> <br>
+		说明：设定页面使用的字符集。<br>
+		&nbsp&nbspmeta标签的charset的信息参数如GB2312时，代表说明网站是采用的编码是简体中文；<br>
+
+		&nbsp&nbspmeta标签的charset的信息参数如BIG5时，代表说明网站是采用的编码是繁体中文；<br>
+
+		&nbsp&nbspmeta标签的charset的信息参数如iso-2022-jp时，代表说明网站是采用的编码是日文；<br>
+
+		&nbsp&nbspmeta标签的charset的信息参数如ks_c_5601时，代表说明网站是采用的编码是韩文；<br>
+
+		&nbsp&nbspmeta标签的charset的信息参数如ISO-8859-1时，代表说明网站是采用的编码是英文；<br>
+
+		&nbsp&nbspmeta标签的charset的信息参数如UTF-8时，代表世界通用的语言编码；<br>
+		举例:<br>
+		&ltmeta http-equiv="content-Type"content="text/html;charset=gb2312"&gt <br>
+		<br><br><br>
+	</p>
+	<h2>3.Link标签</h2>
+	<p>
+		1)含义:标签定义文档与外部资源的关系,<br>
+		2)作用：<br>
+		a.其最常见的用途是链接外部样式表<br>
+		b.设置网页页签上的ICON图标<br>
+		3)常用属性和赋值<br>
+		<b>a.rel:</b>必写！relation 简写 rel,作用：描述了当前页面与href所指定文档的关系<br>
+		<b>b.href:</b>必写！Hypertext Reference 简写 href,作用：目标资源的路径<br>
+		3)注意：<br>
+			&nbsp link 元素是空元素，它仅包含属性<br>
+			&nbsp link 此元素只能存在于 head 部分，不过它可出现任何次数<br>
+		4)举例:<br>
+		<b>&nbsp a.链接外部样式表</b><br>
+		&lt link rel="stylesheet" href="../test.css" &gt <br>
+		<b>&nbsp a.设置ICON图标</b><br>
+		&lt link rel="icon" href="./favicon.icon" &gt <br>
+	</p>
+	<h2>4.零零碎碎</h2>
+	<p>
+		1).图标与图片的区别：<br>
+		 a.图标与图像的标准是不同的,图标的扩展名是.icon;<br>
+		 b.图标是具有明确指代含义的计算机图形;<br> c.图标有一个最重要的属性是允许看到屏幕后面的背景图标的图像。即，透明度<br>
+		2).bitbug.net 在线制作icon图标<br>
+		3).windows上查看图片和图标的区别<br>
+		将图片和图标放在一个路径下--》在当前路径下新建一个文件夹--》右键属性--》自定义--》更改图标--》浏览--》发现可选的图标只有后缀名为.ico的文件<br>
+		4)标准的icon设置方法见头部
+	</p>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>初识HTML</title>
+	<style>
+		body{
+			background-color: ;
+		}
+	</style>
+</head>
+<body>
+	<h1>初识HTML</h1>
+	<br>
+	<br>
+	<br>
+	<h2>主要内容：</h2>
+	<h3>1.什么是html？</h3>
+	<h3>2.html文档基本结构？</h3>
+	<h3>3.元素、标签是什么？</h3>
+	<h3>4.标签分类？</h3>
+	<h3>5.标签之间的关系？</h3>
+	<h3>6.工具及快捷键？</h3>
+	<h3>7.零零碎碎</h3>
+	<br>
+	<br>
+	<br>
+	<h2>1.什么是html？</h2>
+	<p>HTML(Hyper Text Markup Languge);超文本：超链接，超越文本（从一个网页链接到其他的网页；实现页面之间的跳转）;标记：标记，文本含义;纯文本是没有任何语义的，就是文字内容的信息，例如一级标题，二级标题，这是需要给予其含义的，所以有了标记语言，用来标记某段文字是什么语义，是一级标题呢还是二级标题呢？</p>
+	<p>HTML为你提供了一种告诉浏览器网页的结构的方法，什么是结构？如你所见，就是一种标记文本的手段，令浏览器知道哪里是标题，哪里是主题，哪里是子标题等等，所有工作都是关于结构的，而不是外观</p>
+	<p>一旦浏览器知道了一些有关结构的信息，它就会以更有意义和可读性的方式显示页面</p>
+	<h2>2.html的文档结构</h2>
+	<p>
+		<pre>
+	       <！DOCTYPE html> --DTD文档说明
+	       &lthtml&gt--html之间文本开始
+	       &lthead&gt--头部重要信息的说明在此
+	       		&ltmeta charset="uft-8"&gt--编码格式
+	       		&lttitle&gt--标题
+	       	&ltbody&gt--html主体部分
+		</pre>
+	</p>
+	<h2>3.元素、标签是什么？</h2>
+	<p>元素= 开始标记+内容+结束标记</p>
+	<p>空元素：就是数值没有实际内容的元素，所以为空的</p>
+	<p>如果一个元素不需要标记文本，那它就可能是一个空元素</p>
+	<p>没有html内容的元素称为空元素，当你需要一个空元素时，只需要写一个开始标记，这种方便的缩写减少了html标记的数量</p>
+	<p>简而言之，HTML就是用包围文本的成对标记告诉浏览器网页结构</p>
+	<h2>4.标签的分类</h2>
+	<p>
+		单标签：有一个标签组成,如：&ltbr /&gt换行     &lthr /&gt水平分割线
+		<br>
+		双标签:由“开始标签”和“结束标签”两部分构成，必须成对使用，如&ltp&gt&lt/p&gt,&ltp&gt是开始标签，表示一个段落的开始，&lt/p&gt是结束标签，表示一个段落的结束
+	</p>
+	<h2>5.标签之间的关系</h2>
+	<p>1)包含关系（嵌套、父子、继承）：<br>2）并列关系（相邻、邻居、并列、兄弟）：</p>
+	<h2>6.工具及快捷键</h2>
+	<p>公欲善其事必先利其器<br>
+	   常用的web编辑工具:<br>
+		1)sublime:轻量级插件多（sublime前端插件安装与推荐）<br>
+		2)webstrom:	重量级，功能强大<br>
+		常用sublime快捷键<br>
+		1)ctrl+shift+k：快速删除行；<br>
+		2)ctrl+shift+D：快速复制行；<br>
+		3)ctrl+鼠标左键单击：集体输入；<br>
+		4)ctrl+L：选中行；<br>
+		5)ctrl+shift+上下箭头：快速上下移动行；<br>
+		6)alt+shift+2：打开多窗口；<br>
+		7)F11：全屏；<br>
+		8)ctrl+w/ctrl+f4：关闭窗口；<br>
+		9)ctrl+shift+t：打开历史关闭窗口<br>
+	</p>
+	<h2>7.零零碎碎</h2>
+	<p>
+	1）快速设置显示文件后缀名，隐藏文件等等<br>
+	1.设置win7文件夹相关属性：开始菜单--》控制面板--》文件夹选项--》大图标--》查看--》高级设置--》显示隐藏文件<br>
+	2.win+e -》atl--》工具--》文件夹选项--》查看--》取消隐藏受保护文件和操作系统文件<br>
+	2）.html 和.htm 是操作系统不同，不能显示4个字母的后缀名<br>
+	3）后缀名不能决定文件格式，只能决定文件打开的不同方式<br>
+	4）在中文状态下很多快捷键都是无效的<br>
+	3.什么是纯文本：没有任何文本修饰的，只保存文本，不保存其格式、字体设置的就是纯文本，<br>
+	4.后缀名是.rtf是mac下纯文本格式，在win下用记事本打开<br>
+	5.&ltbr&gt 和 &ltbr/&gt<br>
+	&ltbr&gt是HTML写法。<br>
+	&ltbr/&gt是XHTML1.1的写法，是XHTML为兼容HTML的写法,也是XML写法。<br>
+	在HTML5中，这两种格式都会被承认，没有区别。编写的时候，就看浏览器支持什么语言<br>
+	6.snagit截图工具<br>
+	7.为sublime设置为打开用浏览器运行快捷键（注意，这里打开的是默认浏览器，欲默认用google打开，需要将google设置为默认浏览器才行）<br>
+	1）安装View In Browser插件 ：快捷键 Ctrl+Shift+P（菜单栏Tools->Command Paletter），输入 pcip选中Install Package并回车，输入View In Browser的插件回车就安装了<br>
+	2）设置快捷键：菜单栏Preferences->Key Bindings-User）-->打开Default (Windows).sublime-keymap文件编辑，<br>
+	   或者F:\ProgramFiles\Sublime Text 3\Data\Packages\User编辑Default (Windows).sublime-keymap输入如下内容：<br>
+		[ { "keys": ["ctrl+alt+f"], "command": "open_in_browser" },]
+	3)快捷键使用：编辑index.html文件--》使用快捷键ctrl+alt+enter，浏览编辑效果，这里使用默认浏览器打开<br>
+	8.打开控制面板快捷方法<br>
+	win+r--》control;
+	</p>
+
+</body>
+</html>

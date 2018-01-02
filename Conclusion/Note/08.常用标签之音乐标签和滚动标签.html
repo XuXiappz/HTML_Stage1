@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>常用标签之音乐标签和滚动标签</title>
+</head>
+<body>
+	<h1>常用标签之音乐标签和滚动标签</h1>
+	<h2>主要内容</h2>
+	<h3>1.音乐标签</h3>
+	<h3>2.滚动标签</h3>
+	<h3>3.演示</h3>
+	<br><br><br>
+	<h2>1.音乐标签&ltembed&gt</h2>
+	<p>
+		1)格式：&ltembed src="helloworld.swf" /&gt <br>
+		2)重要属性和赋值： <br>
+		a.src:source；音乐文件路径<br>
+		b.hidden:true ；是否隐藏控件<br>
+		3)作用：为页面添加背景音乐
+	</p>
+	<h2>2.滚动标签&ltmarquee&gt &lt/marquee&gt  </h2>
+	<p>
+		1)格式：&ltmarquee behavior="slide" decrection = "down" height="300px bgcolor="orange" loop = -1 &gt &lt/marquee&gt <br>
+		2)常用的重要属性和赋值：<br>
+
+		behavior:设定滚动的方式<br>
+		&nbsp alternate： 表示在两端之间来回滚动,往返运动；<br>
+		&nbsp scroll： 表示由一端滚动到另一端，会重复；<br>
+		&nbsp slide：  表示由一端滚动到另一端，不会重复 <br>
+
+		bgcolor:设定活动字幕的背景颜色，背景颜色可用RGB、16进制值的格式或颜色名称来设定。<br>
+		&nbsp #006699：用十六进制表示；<br>
+		&nbsp RGB(10%,50%,100%,) 用RGB格式表示<br>
+		&nbsp red  用单词表示<br>
+
+		width、height:设定活动字幕的高和宽<br>
+
+		direction：设定活动字幕的滚动方向 <br>
+		&nbsp down： 设定活动字幕的滚动方向direction="down"：向下<br>
+		&nbsp left： 设定活动字幕的滚动方向direction="left"：向左<br>
+		&nbsp right ： 设定活动字幕的滚动方向direction="right"：向右 <br>
+		&nbsp up ： 设定活动字幕的滚动方向direction="up"：向上 <br>
+
+		loop:设定滚动的次数<br>
+		loop=-1:表示一直滚动下去，默认为-1 <br>
+	</p>
+	<h2>3.演示</h2>
+	<p>1.音乐标签</p>
+	<embed src="../Miusc/全部都给你.mp3"  hidden="true">
+	<p>2.marquee标签</p>
+	<marquee behavior="alternate" direction="left" bgcolor="orange" width="600" height="500" loop="2">
+		<img src="../Images/pie.jpg" alt="Pie">
+	</marquee>
+</body>
+</html>
