@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>常用标签之table标签</title>
+</head>
+<body>
+	<h1>常用标签之table标签</h1>
+	<h2>主要内容：</h2>
+	<h3>1.表格的简单示例</h3>
+	<h3>2.表格标签</h3>
+	<h3>3.表格标签的重要属性和赋值</h3>
+	<h3>4.表格的标准结构</h3>
+	<h3>5.表格的单元格合并</h3>
+	<h3>6.细线表格</h3>
+	<h3>7.零零碎碎</h3>
+	<br><br><br>
+
+	<h2>1.表格的简单示例</h2>
+
+	 <table border="1" width="200" height="150" cellspacing="0" cellpadding="20" align="left" bgcolor="pink">
+	 <caption><h3>测试表</h3></caption>
+	 	<tr align="center" valign="middle">
+		 	<th>姓名</th>
+		 	<th>年级</th>
+		 	<th>喜欢的课程</th>
+	 	</tr>
+	 	<tr align="center">
+	 		<td>zhangsan</td>
+	 		<td>1</td>
+	 		<td>yuwen</td>
+	 	</tr>
+	 	<tr align="center">
+	 		<td>lisi</td>
+	 		<td>1</td>
+	 		<td>yuwen</td>
+	 	</tr>
+	 	<tr align="center">
+	 		<td>wangwu</td>
+	 		<td>2</td>
+	 		<td>shuxue</td>
+	 	</tr>
+	 </table>
+	 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+	 <h2>2.表格标签</h2>
+	 <p>
+		&lttable border="1" width="200" height="150" cellspacing="0" cellpadding="20" align="left" bgcolor="pink"&gt <br>
+		&nbsp&nbsp&nbsp&nbsp&ltcaption&gt&lth3&gt测试表&lt/h3&gt&lt/caption&gt <br>
+		&nbsp&nbsp&nbsp&nbsp&lttr align="center"&gt <br>
+		&nbsp&nbsp&nbsp&nbsp&ltth&gt姓名&lt/th&gt <br>
+		&nbsp&nbsp&nbsp&nbsp&ltth&gt年级&lt/th&gt <br>
+		&nbsp&nbsp&nbsp&nbsp&ltth&gt喜欢的课程&lt/th&gt <br>
+		&nbsp&nbsp&nbsp&nbsp&lt/tr&gt <br>
+		&nbsp&nbsp&nbsp&nbsp&lttr align="center"&gt <br>
+		&nbsp&nbsp&nbsp&nbsp&lttd&gtzhangsan&lt/td&gt <br>
+		&nbsp&nbsp&nbsp&nbsp&lttd&gt1&lt/td&gt <br>
+		&nbsp&nbsp&nbsp&nbsp&lttd&gtyuwen&lt/td&gt <br>
+		&nbsp&nbsp&nbsp&nbsp&lt/tr&gt <br>
+		&nbsp&nbsp&nbsp&nbsp&lttr align="center"&gt <br>
+		&nbsp&nbsp&nbsp&nbsp&lttd&gtlisi&lt/td&gt <br>
+		&nbsp&nbsp&nbsp&nbsp&lttd&gt1&lt/td&gt <br>
+		&nbsp&nbsp&nbsp&nbsp&lttd&gtyuwen&lt/td&gt <br>
+		&nbsp&nbsp&nbsp&nbsp&lt/tr&gt <br>
+		&nbsp&nbsp&nbsp&nbsp&lttralign="center&gt <br>
+		&nbsp&nbsp&nbsp&nbsp&lttd&gtwangwu&lt/td&gt <br>
+		&nbsp&nbsp&nbsp&nbsp&lttd&gt2&lt/td&gt <br>
+		&nbsp&nbsp&nbsp&nbsp&lttd&gtshuxue&lt/td&gt <br>
+		&nbsp&nbsp&nbsp&nbsp&lt/tr&gt <br>
+		&lt/table&gt <br>
+	 </p>
+	 <h2>3.表格标签的重要属性和赋值</h2>
+	 <p>
+	 	1).标签：<br>
+	 	&lttable&gt--表格标签 <br>
+	 	&ltcaption&gt --表标题标签（写在table标签之下）
+	 	&ltth&gt--表头标签（默认自己加粗） <br>
+	 	&lttr&gt--行标签 <br>
+	 	&lttd&gt--单元格标签 <br>
+
+	 	2）属性：<br>
+	 	<b>cellspacing</b><br>
+		<p>说明：单元格之间的距离</p>
+	 	<b>cellpadding</b><br>
+		<p>说明：内容与单元格边框的距离</p>
+		<b>align</b><br>
+		<p>说明：table整体相对于父容器的align属性,tr，td也有这个属性，分别控制整行单元格或某个单元格的align属性<br>
+			可能取值为：left，right，center
+		</p>
+		<b>valign</b><br>
+		<p>说明：table整体相对于父容器的valign属性,tr，td也有这个属性，分别控制整行单元格或某个单元格的valign属性<br>
+			可能取值为：top，bottom，<b>middle</b>
+		</p>
+
+	 </p>
+	 <h2>4.表格的标准结构(对SEO更友好)</h2>
+		&lttable&gt <br>
+			&ltthead&gt&lt/thead&gt <br>
+			&lttbody&gt&lt/tbody&gt <br>
+			&lttfoot&gt&lt/tfoot&gt <br>
+		&lt/table&gt <br>
+	<h2>5.表格的单元格合并</h2>
+		说明：不管是纵向合并还横向合并合并了的行数和列数需要删除掉具体代码F12查看,<br>
+		 <b>1).横向合并(colspan)</b>
+ 		 <b>2).纵向合并(rowspan)</b>
+			<div>
+				<table border="1" width="600" height="300">
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td rowspan="2"></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td rowspan="2" colspan="2"></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+				</table>
+			</div>
+	<h2>6.细线表格</h2>
+	<p>说明：如果直接设置border为1,cellspace=0 是无法实现细线表格，因为这个border为1既包含有表格的外边框已经每一个单元格的边框都会是1,重叠在一起就是2了<br>
+		所以，要实现细线表格就需要换一种思路：设置table的背景颜色为边框颜色，设置border为0，cellspace=1即可实现<br>
+		<b>非细线表格</b><br>
+		<div>
+			<table border="1" cellspacing="0" >
+				<tr>
+					<td>星期一</td>
+					<td>星期二</td>
+					<td>星期三</td>
+				</tr>
+				<tr>
+					<td>语文</td>
+					<td>数学</td>
+					<td>外语</td>
+				</tr>
+				<tr>
+					<td>生物</td>
+					<td>数学</td>
+					<td>外语</td>
+				</tr>
+			</table>
+		</div>
+		<br>
+		<b>细线表格</b><br>
+		<div>
+			<table bgcolor="black" cellspacing="1">
+				<tr bgcolor="pink">
+					<td>星期一</td>
+					<td>星期二</td>
+					<td>星期三</td>
+				</tr>
+				<tr bgcolor="pink">
+					<td>语文</td>
+					<td>数学</td>
+					<td>外语</td>
+				</tr>
+				<tr bgcolor="pink">
+					<td>生物</td>
+					<td>数学</td>
+					<td>外语</td>
+				</tr>
+			</table>
+		</div>
+	</p>
+	<h2>7.零零碎碎</h2>
+	<p>快捷键：快速制作3行3列表格：table&gttr*3&gttd*3 <br>
+		说明：&gt是指包含某子元素；*n表示有n个标签
+	</p>
+</body>
+</html>

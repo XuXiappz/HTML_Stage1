@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>常用标签之表单标签</title>
+</head>
+<body>
+	<h1>常用标签之表单标签</h1>
+	<h2>主要内容</h2>
+	<h3>前言</h3>
+	<h3>1.表单标签from及其主要属性</h3>
+	<h3>2.get 和post提交方式区别</h3>
+	<h3>3.表单控件：input元素</h3>
+	<h3>4.h5表单控件：input元素</h3>
+	<h3>5.零零碎碎</h3>
+	<br><br><br><br>
+	
+	<h2>前言</h2>
+	<p>表单的作用就是用来收集用户信息（如：银行卡办卡是需要填写的各种表单一样）<br>
+		表单的组成：1）提示信息；2）表单控件；3）表单域
+	</p>
+
+	<h2>1.表单标签from及其主要属性</h2>
+	<p>	
+		<b>举例：</b><br>
+		&ltform action="1.php" method="get"&gt&lt/form&gt
+		<b>说明：</b><br>
+		1.action:一个URL地址；指定form表单向何处发送数据，交由其进行处理<br>
+		2.enctype {string}：规定在发送表单数据之前，如何对表单数据进行编码。<br>
+		指定的值有：application/x-www-form-urlencoded ：在发送前编码所有字符（默认为此方式）；<br>
+		multipart/form-data ：不对字符编码。使用包含文件上传控件的表单时，必须使用该值<br>
+		2.method：指定表单以何种方式发送到指定的页面<br>
+		get(通过地址栏传输信息，安全性差) form表单里所填的值，附加在action指定的URL后面，做为URL链接而传递<br>
+		post：(通过1.php处理信息，安全性高)form表单里所填的值，附加在HTML Headers上<br>
+	</p>
+
+	<h2>2.get 和post提交方式区别</h2>
+	<p>
+		<b>get</b><br>
+		说明：<br>
+		form表单里所填的值，附加在action指定的URL后面，做为URL链接而传递。<br>
+		变量提交的样式为：html元素的name属性=提交的值。多个变量，以 & 符号隔开。<br>
+		举例：<br>
+		提交后url为：http://localhost:4778/ashx/login.ashx?login_username=admin&login_pswd=123456 <br>
+		<b>post</b><br>
+		说明：form表单里所填的值，附加在HTML Headers上。可看到只是action指定的URL，参数并没有附加在URL后面。<br>
+		举例：点击提交后：URL变为：http://localhost:4778/ashx/login.ashx<br>
+		<b>post和get区别总结</b><br>
+	①数据的查询：比如浏览论坛时，URL一般包含了分类、页码数、每页记录数等信息。 get 方式，能一目了然的看到所要查询的信息(条件)。 post 因为隐藏掉了这些信息，不方便进行检验查询条件。<br>②敏感数据的提交(安全性)：对一项记录，进行更改、添加操作时，比如注册用户、更改用户资料等。get 方式附加在URL上，会泄露掉敏感的消息。 post 方式，能隐藏掉敏感的信息。<br>③大数据文本传递：get 虽然方便查询，但由于是附加在URL上，各浏览器对URL也有个长度限制。IE ：2048字符。Chrome、FF 好像是 8182字符。post 好像没此限制。<br>
+	</p>
+
+	<h2>3.表单控件：input元素</h2>
+	<b>A.文本输入框</b><br>
+	说明：<br>
+	type:指定input属性类型，当其为text才为文本输入框<br>
+	name:表单提交时，标识控件键值对的键<br>
+	value:默认文本框中的值，表单提交时，标识控件键值对的值<br>
+	readonly:设置文本框的只读属性，不可编辑了<br>
+	disabled：设置文本框的禁用属性，带有特有样式<br>
+	maxlength:限制最大如数字符长度<br>
+	举例：<br>
+	<div><input type="text" name="username" value="yjp" maxlength="6" readonly="readonly" disabled="disabled"></div>
+	<b>B.密码输入框</b><br>
+	说明：同上<br>
+	举例：<br>
+	<div><input type="password" name="pwd" value="123456"></div>
+
+	<b>C.单选框</b><br>
+	说明：可以搜索一下收音机radio的图片，我们可以看到上面的键位有且只有一个可以处于工作状态，所以单选框由此来<br>
+	name：同上，但是要注意，只有当name值设置为相同时，才能实现单选效果<br>
+	checked：设置默认项，如果相同name属性的标签都设置了checked属性，已最后一个为准，浏览器渲染顺序决定，从上往下，下面的覆盖了前面的<br>
+	举例：<br>
+	<div>
+		男<input type="radio" name="gender" checked="checked">
+		女<input type="radio" name="gender" checked="checked">
+	</div>
+
+	<b>D.多选框</b><br>
+	说明：属性同单选框，不同的地方是可以为多个复选框设置checked属性<br>
+	举例：<br>
+	<div>
+		<input type="checkbox" name="hoby" checked="checked">打篮球
+		<input type="checkbox" name="hoby">踢足球
+		<input type="checkbox" name="hoby" checked="checked">跳跳舞
+	</div>
+
+	<b>E.下拉列表</b><br>
+	说明：select 标签是设置 下拉列表的主要控件 <br>
+		optgroup 标签是设置 下拉列表中的分组的，其中value属性设置其标题 <br>
+		option 标签设置最下分支项的 ;可以为option设置selected 属性就是下拉列表select的默认选项了<br>
+		option中的select属性同上一样，如果多个设置了，以最后设置为准<br>
+	举例：<br>
+	<div>
+		<select name="城市" >
+			<optgroup label="四川">
+				<option value="" >泸州</option>
+				<option value="" selected="selected">南江</option>
+				<option value="">成都</option>
+			</optgroup>
+			<optgroup label="北京">
+				<option value="">海淀</option>
+				<option value="">朝阳</option>
+				<option value="">昌平</option>
+			</optgroup>
+			<optgroup label="重庆">
+				<option value="" selected="selected">重庆</option>
+				<option value="">菜坝子</option>
+				<option value="">沙坪坝</option>
+			</optgroup>
+		</select>
+	</div>
+
+	<b>F.多行文本框</b><br>
+	说明：<br>
+	textarea 标签就是设置多行文本的标签<br>
+	cols:控制输入字符长度 <br>
+	rows:控制输入的行数<br>
+	举例：<br>
+	<div> 
+		<textarea name="testTA" cols="5" rows="3"></textarea>
+	</div>
+
+	<b>G.表单分组标签</b><br>
+	说明：filedset 标签就是对from表单进行分组的<br>
+		legend 标签就是设置对表单分组名称
+	举例：<br>
+	<div>
+		<form action="http://www.itcast.cn/" method="get">
+			<fieldset>
+				<legend>用户登陆信息</legend>
+				<input type="text" name="username" value="yjp">
+				<input type="password" name="pwd" value="123">
+			</fieldset>
+			<fieldset>
+				<legend>用户选择信息</legend>
+				<div>
+					<input type="radio" name="gender" value="men"> 男
+					<input type="radio" name="gender" value="women" checked="checked"> 女
+				</div>
+				<div>
+					<input type="checkbox" name="hoby" checked="checked" value="basketball">basketball
+					<input type="checkbox" name="hoby" checked="checked" value="sorecball">scoreball
+					<input type="checkbox" name="hoby" value="ping-pangball">ping-pangball
+				</div>
+				<input type="reset">
+				<input type="submit">
+			</fieldset>
+		</form>
+	</div>
+	<b>H.文件上传控件</b><br>
+	说明：这是文件上传空间，只需将type设置为file<br>
+	举例：<br>
+	<div><input type="file" multiple="multiple"></div>
+
+	<b>I.提交按钮</b><br>
+	说明：提交按钮 只需将type设置为submit<br>
+	举例：<br>
+	<div><input type="submit"></div>
+
+	<b>J.重置按钮</b><br>
+	说明：重置按钮，只需将type设置为reset即可，可以实现重置表单域内数据信息为默认设置<br>
+	举例：<br>
+	<div><input type="reset"></div>
+
+	<b>K.普通按钮</b><br>
+	说明：只需将type设置为button即可，value可以设置其标题<br>
+	举例：<br>
+	<div><input type="button" value="我是按钮"></div>
+
+	<b>L.图片按钮</b><br>
+	说明：type需要设置为image src设置添加的图片路径<br>
+	举例：<br>
+	<div><input type="image" src="../Images/pie.jpg"></div>
+
+
+	<h2>4.h5表单控件：input元素</h2> 
+	<b>A.网址控件</b><br>
+	说明：<br>
+	举例：<br>
+	<div><input type="url"></div>
+
+	<b>B.日期控件</b><br>
+	说明：<br>
+	举例：<br>
+	<div><input type="date"></div>
+
+	<b>C.时间控件</b><br>
+	说明：<br>
+	举例：<br>
+	<div><input type="time"></div>
+
+	<b>D.邮件控件</b><br>
+	说明：<br>
+	举例：<br>
+	<div>	<input type="email"></div>
+
+	<b>E.数字控件</b><br>
+	说明：step是设置数字变化一次的步长的<br>
+	举例：<br>
+	<div><input type="number" step="5"></div>
+
+	<b>F.滑块控件</b><br>
+	说明：step 设置滑动步幅的<br>
+	举例：<br>
+	<div><input type="range" step="5"></div>
+
+	<h2>5.零零碎碎</h2>
+	<p>&amp的字符实体是&ampamp，是英文ampersand的简写</p> 
+		
+</body>
+</html>
