@@ -73,15 +73,15 @@
 	 	1).标签：<br>
 	 	&lttable&gt--表格标签 <br>
 	 	&ltcaption&gt --表标题标签（写在table标签之下）
-	 	&ltth&gt--表头标签（默认自己加粗） <br>
-	 	&lttr&gt--行标签 <br>
-	 	&lttd&gt--单元格标签 <br>
+	 	&ltth&gt--表头标签（默认自己加粗），一般用th替换相应的td实现纵向或横向表头 <br>
+	 	&lttr&gt--行标签，table row，表格中的一行 <br>
+	 	&lttd&gt--单元格标签，table data，是表格中的一个单元格 <br>
 
 	 	2）属性：<br>
 	 	<b>cellspacing</b><br>
-		<p>说明：单元格之间的距离</p>
+		<p>说明：单元格与单元格之间的距离，默认为2px</p>
 	 	<b>cellpadding</b><br>
-		<p>说明：内容与单元格边框的距离</p>
+		<p>说明：内容与单元格边框的距离，默认为1px</p>
 		<b>align</b><br>
 		<p>说明：table整体相对于父容器的align属性,tr，td也有这个属性，分别控制整行单元格或某个单元格的align属性<br>
 			可能取值为：left，right，center
@@ -90,6 +90,8 @@
 		<p>说明：table整体相对于父容器的valign属性,tr，td也有这个属性，分别控制整行单元格或某个单元格的valign属性<br>
 			可能取值为：top，bottom，<b>middle</b>
 		</p>
+		<b>border</b><br>
+		<p>说明：设置边框，默认为0，没有边框</p>
 
 	 </p>
 	 <h2>4.表格的标准结构(对SEO更友好)</h2>
